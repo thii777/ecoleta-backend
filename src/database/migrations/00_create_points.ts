@@ -1,4 +1,4 @@
-import * as Knex from "knex";
+import Knex from "knex";
 
 export async function up(knex: Knex): Promise<any>  {
   return knex.schema.createTable('points', function(table: any) {
@@ -6,9 +6,9 @@ export async function up(knex: Knex): Promise<any>  {
     table.string('image').notNullable()
     table.string('name').notNullable()
     table.string('email').notNullable()
-    table.decimal('whatsapp').notNullable()
-    table.decimal('latitude').notNullable()
-    table.decimal('longitude').notNullable()
+    table.string('whatsapp').notNullable()
+    table.string('latitude').notNullable()
+    table.string('longitude').notNullable()
     table.string('city').notNullable()
     table.string('uf', 2).notNullable()
   })

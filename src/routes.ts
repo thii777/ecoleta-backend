@@ -1,12 +1,12 @@
-import { Router } from "express";
+import express from "express";
+import knex from './database/connection'
 
-const routes = Router();
+import ItemsController from './controllers/ItemsController'
+import PointsController from './controllers/pointsController'
 
-routes.post("/users");
-routes.get("/users", (req: any, res: any) => {
-  return res.json("ola");
-});
-routes.get("/users/:id");
-routes.get("/genders");
+const routes = express.Router();
+
+routes.get('/items', ItemsController.getAll);
+routes.post('/points', PointsController.create)
 
 export default routes;
